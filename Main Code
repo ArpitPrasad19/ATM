@@ -1,0 +1,63 @@
+import java.util.*;
+public class ATM
+{
+   void atm()
+   {
+        int choice; double amount, balance=10, pn=1854; long an=7895462;
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter your account number:");
+        an=sc.nextLong();
+        System.out.print("Enter your pin number:");
+        pn=sc.nextInt();
+        if(an==7895462 && pn==1854)
+        {
+            while(true)
+            {
+              System.out.println("1. Cash Transaction.");
+              System.out.println("2. Cash Deposit.");
+              System.out.println("3. Balance.");
+              System.out.println("4. Exit.");
+              System.out.print("Enter you choice:");
+              choice=sc.nextInt();
+              switch(choice)
+              {
+                  case 1:System.out.print("Enter the Amount to be withdrawled:");
+                  amount=sc.nextDouble();
+                  if(amount>balance)
+                  {
+                      System.out.println("Cannot perform the operation. Not enough Balance.");
+                      System.out.println("Current Balance : "+balance);
+                  }
+                  else if(amount<=balance)
+                  {
+                      balance=balance-amount;
+                      System.out.println("Please collect your money.");
+                      System.out.println("Current Balance : "+balance);
+                  }
+                  System.out.println(" ");
+                  break;
+                  
+                  case 2:System.out.print("Enter the Amount to be deposited:");
+                  amount=sc.nextDouble();
+                  balance=balance+amount;
+                  System.out.println("Money has been successfully deposited:");
+                  System.out.println("Current Balance : "+balance);
+                  System.out.println(" ");
+                  break;
+                  
+                  case 3:System.out.println("Current Balance : "+balance);
+                  System.out.println(" ");
+                  break;
+                  
+                  case 4:System.out.println("Have a Nice Day!");
+                  System.exit(0);
+              }
+            }
+        }
+   }
+   public static void main(String[] args)
+   {
+       ATM obj=new ATM();
+       obj.atm();
+   }
+}
