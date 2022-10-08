@@ -1,1 +1,1 @@
-# This is a program to make a basic ATM machine's UI.
+#A program to make basic ATM machine UI.
